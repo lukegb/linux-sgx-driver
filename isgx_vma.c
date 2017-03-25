@@ -251,7 +251,7 @@ out:
 
 static int isgx_vma_fault(struct vm_area_struct *vma, struct vm_fault *vmf)
 {
-	unsigned long addr = (unsigned long) vmf->virtual_address;
+	unsigned long addr = vmf->address;
 	struct isgx_enclave_page *entry;
 
 	entry = isgx_vma_do_fault(vma, addr, 0);
